@@ -6,7 +6,9 @@ on:
 
 env:
     REGISTRY: ghcr.io
-    IMAGE_NAME: ${{ github.repository }}
+    # GHCR requires lowercase repository names. Normalise so the digest-based
+    # build doesn't fail on uppercase owners (e.g. forks like Gompman/...).
+    IMAGE_NAME: ${{ github.repository | downcase }}
 
 jobs:
     build:
