@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.4.9] - 2026-10-10
+
+### Fixed
+- Keep PyTorch compiler runtime dependencies in Docker images so the server
+  starts successfully with the current Pocket TTS and PyTorch imports.
+- Run a `pocket_tts` import check during Docker builds to catch missing runtime
+  dependencies before publishing or installing the add-on.
+
 ## [1.4.8] - 2026-08-18
 
 ### Added
